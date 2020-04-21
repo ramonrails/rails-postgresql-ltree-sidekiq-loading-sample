@@ -1,0 +1,13 @@
+Learning
+Learning.Galaxy
+Learning.Galaxy.Astronomy
+Learning.Galaxy.Astronomy.Astrophysics
+Learning.Galaxy.Astronomy.Cosmology
+Learning.Hobbies
+Learning.Hobbies.Amateurs_Astronomy
+Learning.Collections
+Learning.Collections.Images
+Learning.Collections.Images.Astronomy
+Learning.Collections.Images.Astronomy.Stars
+Learning.Collections.Images.Astronomy.Galaxies
+Learning.Collections.Images.Astronomy.Astronauts
