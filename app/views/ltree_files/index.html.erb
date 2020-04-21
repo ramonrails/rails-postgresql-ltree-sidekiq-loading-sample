@@ -1,0 +1,57 @@
+<pre>
+  * Turquoise = File attached (parsed by sidekiq)
+  * Yellow background = Top node of LTREE
+
+  * Destroy top node (yellow row) to destroy entire LTREE
+  * Click `Show` to see statistics of the LTREE node
+</pre>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Ltree Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>To process at</th>
+      <th>LTREE path</th>
+      <th>File attached?</th>
+      <th>Parsed?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ltree_files.each do |ltree_file| %>
+      <tr style="
+        background-color: <%= ltree_file.uploaded_file.attached? ? 'turquoise' : (ltree_file.root? ? 'yellow' : '') %>;
+      ">
+        <td>
+          Scheduled to parse at <%= ltree_file.name.presence || 'immediately' %> at <%= ltree_file.created_at %>
+        </td>
+        <td><%= ltree_file.process_at %></td>
+        <td><%= ltree_file.path %></td>
+        <td><%= ltree_file.uploaded_file.attached? ? 'Yes' : 'No' %></td>
+        <td><%= ltree_file.parsed? ? 'Yes' : 'No' %></td>
+        <td><%= link_to 'Show', ltree_file %></td>
+        <% if ltree_file.root? || ltree_file.uploaded_file.attached? %>
+          <td><%= link_to 'Edit', edit_ltree_file_path(ltree_file) %></td>
+          <td><%= link_to 'Destroy', ltree_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ltree File', new_ltree_file_path %>
+
+<hr>
+
+<h2>Tree from Ltree</h2>
+
+<ul>
+  <%= render partial: "node", collection: LtreeFile.roots %>
+</ul>

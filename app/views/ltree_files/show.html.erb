@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ltree_file.name %>
+</p>
+
+<p>
+  <strong>Process at:</strong>
+  <%= @ltree_file.process_at %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @ltree_file.path %>
+</p>
+
+<hr>
+
+<h2>Attributes</h2>
+<pre>
+  * is this root? (<%= @ltree_file.root? %>)
+  * Depth? (<%= @ltree_file.depth %>)
+  * Root parent of this? (<%= @ltree_file.root.path %>)
+  * Parent of this? (<%= @ltree_file.parent.path %>)
+  * Leaves? (<%= @ltree_file.leaves.collect(&:path) %>)
+  * Is this a leaf? (<%= @ltree_file.leaf? %>)
+  * Self and ancestors list? (<%= @ltree_file.self_and_ancestors.collect(&:path) %>)
+  * Ancestors only? (<%= @ltree_file.ancestors.collect(&:path) %>)
+  * Self and Descendents? (<%= @ltree_file.self_and_descendents.collect(&:path) %>)
+  * Descendents only? (<%= @ltree_file.descendents.collect(&:path) %>)
+  * Self and Siblings? (<%= @ltree_file.self_and_siblings.collect(&:path) %>)
+  * Siblings only? (<%= @ltree_file.siblings.collect(&:path) %>)
+  * Children? (<%= @ltree_file.children.collect(&:path) %>)
+</pre>
+
+<%= link_to 'Edit', edit_ltree_file_path(@ltree_file) %> |
+<%= link_to 'Back', ltree_files_path %>

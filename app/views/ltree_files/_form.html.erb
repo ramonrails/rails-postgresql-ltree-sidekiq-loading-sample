@@ -1,0 +1,29 @@
+<%= form_with(model: ltree_file, local: true) do |form| %>
+  <% if ltree_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ltree_file.errors.count, "error") %> prohibited this ltree_file from being saved:</h2>
+
+      <ul>
+        <% ltree_file.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "When should we process this?" %>
+    <%= form.text_field :name, placeholder: 'now' %>
+    <pre>Examples: 5 minutes from now, tomorrow at 10:00am</pre>
+  </div>
+
+  <div class="field">
+    <%= form.label :uploaded_file, "Upload LTREE file" %>
+    <%= form.file_field :uploaded_file %>
+    <pre>Hint: click to select a file with ltree data</pre>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Upload and process" %>
+  </div>
+<% end %>

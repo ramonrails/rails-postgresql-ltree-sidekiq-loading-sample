@@ -1,0 +1,12 @@
+<li>
+  <%= node.path %>
+  (
+    Depth: <%= node.depth %>
+  )
+
+  <% if node.children.count.positive? %>
+    <ul>
+      <%= render partial: "node", collection: node.children %>
+    </ul>
+  <% end %>
+</li>
