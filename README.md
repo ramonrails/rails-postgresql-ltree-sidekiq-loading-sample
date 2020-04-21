@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## PostgreSQL LTREE demo
 
-Things you may want to cover:
+You need
+* redis installed at 12.0.0.1
+* postgresql with ltree extension
+* this source code
+* ruby, rails, and other gems
 
-* Ruby version
+## How to run
 
-* System dependencies
+* run `sidekiq`
+* run `rails s`
+* follow these steps
 
-* Configuration
+### Step 01
+![Step 01](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-01.png)
 
-* Database creation
+### Step 02
+![Step 02](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-02.png)
 
-* Database initialization
+### Step 03
+![Step 03](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-03.png)
 
-* How to run the test suite
+### Step 04
+![Step 04](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-04.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Step 05
+![Step 05](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-05.png)
 
-* Deployment instructions
+### Step 06
+![Step 06](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-06.png)
 
-* ...
+### Step 07
+![Step 07](https://github.com/ramonrails/rails-postgresql-ltree-sidekiq-loading-sample/blob/master/public/images/Screenshot-07.png)
